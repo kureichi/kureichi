@@ -15,4 +15,4 @@ An extension to display your Adobe status on your Discord profile; this extensio
 An After Effects script similar to Textevo that adds a new animation mode and separates the strength for each property.
 
 ### [matchnull](https://github.com/Kuredew/matchnull)
-An independent After Effects script to make a null the parent of a deselected layer; this script ensures that the null immediately moves to the exact position of the selected layer.
+An independent After Effects script to make a null the parent of a selected layer; this script ensures that the null immediately moves to the exact position of the selected layer.
