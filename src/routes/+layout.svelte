@@ -13,6 +13,8 @@
 
 <style>
     :global(body) {
+        color: #FAF9F6;
+        background-color: #1A1A1A;
         margin: 0;
         font-family: "Manrope Variable";
     }
