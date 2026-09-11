@@ -1,5 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+    import "@fontsource-variable/manrope"
 
 	let { children } = $props();
 </script>
@@ -9,3 +10,10 @@
 </svelte:head>
 
 {@render children()}
+
+<style>
+    :global(body) {
+        margin: 0;
+        font-family: "Manrope Variable";
+    }
+</style>
