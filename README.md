@@ -1,42 +1,18 @@
-# sv
+Hi, I’m a motion graphics editor, and I’m currently focused on creating music videos that incorporate typography and manga.
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+I’m also accepting commissions for music videos, stingers, or 2D puppeting/2D animation.
 
-## Creating a project
+Interested? Check out my work here: [zeanlost](https://www.instagram.com/zeanlost/)
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## tools
+I also create tools and extensions for After Effects; you might want to try them out.
 
-To recreate this project with the same configuration:
+### [adobe-discord-rpc](https://github.com/Kuredew/adobe-discord-rpc)
+An extension to display your Adobe status on your Discord profile; this extension is very fast even though it’s polling-based.
 
-```sh
-# recreate this project
-pnpm dlx sv@0.17.0 create --template minimal --types ts --add prettier eslint --install pnpm .
-```
+### [nautilus](https://github.com/Kuredew/nautilus)
+An After Effects script similar to Textevo that adds a new animation mode and separates the strength for each property.
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### [matchnull](https://github.com/Kuredew/matchnull)
+An independent After Effects script to make a null the parent of a selected layer; this script ensures that the null immediately moves to the exact position of the selected layer after created.
