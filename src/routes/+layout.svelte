@@ -2,6 +2,8 @@
 	import favicon from '$lib/assets/favicon.svg';
     import "@fontsource-variable/manrope"
 
+    import '../app.css'
+
 	let { children } = $props();
 </script>
 
