@@ -9,6 +9,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+    <link rel="stylesheet" href="fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css">
 </svelte:head>
 
 {@render children()}
@@ -18,6 +19,6 @@
         color: #FAF9F6;
         background-color: #1A1A1A;
         margin: 0;
-        font-family: "Manrope Variable";
+        font-family: "Satoshi-Variable";
     }
 </style>
