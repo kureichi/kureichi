@@ -23,20 +23,20 @@
 	class="fixed top-0 z-100 flex h-15 max-h-15 w-full items-center border border-white/10 backdrop-blur-sm"
 >
 	<ContainerRoot>
-		<ContainerBody>
-			<div class="flex justify-between">
-				<div class="flex">
-					<a href={resolve('/')}>
-						<ButtonBase>
-							<Logo />
-						</ButtonBase>
-					</a>
+			<ContainerBody>
+				<div class="flex justify-between h-full items-center">
+					<div class="flex">
+						<a href={resolve('/')}>
+							<ButtonBase>
+								<Logo />
+							</ButtonBase>
+						</a>
+					</div>
+					<div class="flex justify-center gap-4 lg:gap-10">
+						{@render NavbarButton('WORKS', resolve('/works'))}
+						{@render NavbarButton('SERVICES', resolve('/services'))}
+					</div>
 				</div>
-				<div class="flex justify-center gap-4 lg:gap-10">
-					{@render NavbarButton('WORKS', resolve('/works'))}
-					{@render NavbarButton('CONTACT', resolve('/contact'))}
-				</div>
-			</div>
-		</ContainerBody>
+			</ContainerBody>
 	</ContainerRoot>
 </div>

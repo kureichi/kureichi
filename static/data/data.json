@@ -1,0 +1,23 @@
+{
+    "categoryList": ["Music Video", "AMV/MAD", "Motion Graphics"],
+    "workList": [
+        {
+            "name": "Overdose / Hochimachi Suisei x Inui Toko (Fan MV)",
+            "description": "Original: Overdose / 星街すいせい×戌亥とこ(Cover)",
+            "category": "Music Video",
+            "ytId": "FjLu4LzsMTU"
+        },
+        {
+            "name": "Tongari Boushi no Atelier / Akashi - Sennarin MAD Part",
+            "description": "My Work for Onii Team MMV MEPs",
+            "category": "AMV/MAD",
+            "ytId": "f89lAB_M8ZE"
+        },
+        {
+            "name": "拝啓、少年よ ⧸ Hump Back (Simple Music Video)",
+            "description": "Typography inspired by mouri-san\nhttps://x.com/m0ur11s",
+            "category": "Music Video",
+            "ytId": "CfbsMuQlPr8"
+        }
+    ]
+}

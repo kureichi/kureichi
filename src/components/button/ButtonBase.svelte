@@ -4,7 +4,7 @@
 	let { children, class: klass = '', ...restProps }: HTMLButtonAttributes = $props();
 </script>
 
-<button class="cursor-pointer {klass}" {...restProps}>
+<button class="w-fit cursor-pointer {klass}" {...restProps}>
 	{#if children}
 		{@render children()}
 	{/if}
