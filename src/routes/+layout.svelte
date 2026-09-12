@@ -3,13 +3,13 @@
 	import '@fontsource-variable/manrope';
 
 	import '$src/app.css';
+	import AOS from 'aos';
+
 	import NavigationBar from '$components/navbar/NavigationBar.svelte';
 
 	import { onNavigate } from '$app/navigation';
-	import ContainerRoot from '$components/container/ContainerRoot.svelte';
-	import ContainerBody from '$components/container/ContainerBody.svelte';
-	import { resolve } from '$app/paths';
 	import Footer from '$components/footer/Footer.svelte';
+	import { onMount } from 'svelte';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -19,6 +19,11 @@
 				resolve();
 				await navigation.complete;
 			});
+		});
+	});
+	onMount(() => {
+		AOS.init({
+			delay: 50
 		});
 	});
 
@@ -36,14 +41,17 @@
 <!-- ini contentnya -->
 {@render children()}
 
-<Footer />
+<div class="w-full bg-black">
+	<div id="separator" class="h-30 w-full"></div>
 
-<div id="separator" class="h-20 w-full"></div>
+	<Footer />
+	<div id="separator" class="h-20 w-full"></div>
 
-<div
-	class="fixed bottom-0 left-0 flex h-20 w-full items-center justify-center text-xs font-bold opacity-30"
->
-	&copy; 2026 Kureichi
+	<div
+		class="fixed bottom-0 left-0 flex h-20 w-full items-center justify-center text-xs font-bold opacity-30"
+	>
+		&copy; 2026 Kureichi
+	</div>
 </div>
 
 <style>
