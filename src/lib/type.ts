@@ -1,4 +1,4 @@
-export interface Work {
+export interface WorkType {
 	name: string;
 	description: string;
 	category: string;
@@ -7,7 +7,7 @@ export interface Work {
 
 export interface Data {
 	categoryList: string[];
-	workList: Work[];
+	workList: WorkType[];
 }
 
 export interface ResponseJson {
