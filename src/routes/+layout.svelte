@@ -3,13 +3,11 @@
 	import '@fontsource-variable/manrope';
 
 	import '$src/app.css';
-	import AOS from 'aos';
 
 	import NavigationBar from '$components/navbar/NavigationBar.svelte';
 
 	import { onNavigate } from '$app/navigation';
 	import Footer from '$components/footer/Footer.svelte';
-	import { onMount } from 'svelte';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -19,11 +17,6 @@
 				resolve();
 				await navigation.complete;
 			});
-		});
-	});
-	onMount(() => {
-		AOS.init({
-			delay: 50
 		});
 	});
 
