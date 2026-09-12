@@ -9,6 +9,13 @@
 	import Work from '$components/work/Work.svelte';
 	import type { WorkType } from '$src/lib/type.js';
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
+
+	let category = $state();
+
+	$effect(() => {
+		category = page.url.searchParams.get('category') ?? 'All';
+	});
 
 	let works: WorkType[] = $derived.by(() => {
 		if (!data.data) {
@@ -17,7 +24,7 @@
 
 		let workList = [];
 		for (let work of data.data?.workList) {
-			if (work.category != data.category && data.category != 'All') {
+			if (work.category != category && category != 'All') {
 				continue;
 			}
 
@@ -44,7 +51,7 @@
 		<ContainerRoot>
 			<ContainerBody>
 				<div class="flex w-full flex-wrap justify-center gap-2">
-					{#if data.category == 'All'}
+					{#if category == 'All'}
 						<ButtonPrimary>All</ButtonPrimary>
 					{:else}
 						<ButtonSecondary onclick={() => goto(resolve('/works?category=All'))}
@@ -53,7 +60,7 @@
 					{/if}
 
 					{#each data.data.categoryList as ownCategory}
-						{#if data.category == ownCategory}
+						{#if category == ownCategory}
 							<ButtonPrimary>{ownCategory}</ButtonPrimary>
 						{:else}
 							<ButtonSecondary onclick={() => goto(resolve(`/works?category=${ownCategory}`))}
