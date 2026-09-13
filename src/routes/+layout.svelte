@@ -38,7 +38,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css" />
+	<link rel="stylesheet" href="/fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css" />
 </svelte:head>
 
 <!-- ini navbarnya -->
