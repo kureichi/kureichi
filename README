@@ -1,0 +1,5 @@
+Hello, this is the source code for my portfolio website experiment, built using SvelteKit 5.
+
+I did this because it allows me to control all the website elements effectively, and I can also host it in various places since SvelteKit provides a wide range of adapters.
+
+I’ve been getting back into TypeScript lately.
