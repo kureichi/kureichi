@@ -18,7 +18,7 @@
 		<ContainerBody>
 			<div class="flex flex-col gap-4 md:flex-row md:justify-between">
 				<div class="flex h-40 w-fit gap-4">
-					<img src="img/kureichi.png" class="object-cover" alt="" />
+					<img src="/img/kureichi.png" class="object-cover" alt="" />
 				</div>
 
 				<div class="grid grid-cols-2 gap-20 md:grid-cols-4 md:gap-20">

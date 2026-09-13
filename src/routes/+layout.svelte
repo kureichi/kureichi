@@ -8,6 +8,19 @@
 
 	import { onNavigate } from '$app/navigation';
 	import Footer from '$components/footer/Footer.svelte';
+	import NProgress from 'nprogress';
+	import 'nprogress/nprogress.css';
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import nProgress from 'nprogress';
+
+	NProgress.configure({ showSpinner: false });
+
+	beforeNavigate(() => {
+		NProgress.start();
+	});
+	afterNavigate(() => {
+		nProgress.done();
+	});
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -25,7 +38,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css" />
+	<link rel="stylesheet" href="/fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css" />
 </svelte:head>
 
 <!-- ini navbarnya -->
@@ -56,5 +69,10 @@
 		background-color: #1a1a1a;
 		margin: 0;
 		font-family: 'Satoshi-Variable';
+	}
+
+	:global(#nprogress .bar) {
+		background: white !important;
+		height: 4px !important;
 	}
 </style>
