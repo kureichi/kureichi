@@ -7,7 +7,7 @@
 <div class="flex w-fit flex-col gap-4 transition-all hover:scale-102">
 	<div>
 		<img
-			class="w-full max-w-200"
+			class="aspect-video h-auto w-full max-w-200"
 			src="https://img.youtube.com/vi/{work.ytId}/maxresdefault.jpg"
 			alt=""
 		/>
