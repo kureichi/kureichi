@@ -6,10 +6,10 @@
 	import ContainerRoot from '$components/container/ContainerRoot.svelte';
 	import NavigationBarSpace from '$components/navbar/NavigationBarSpace.svelte';
 	import PageHeader from '$components/page/PageHeader.svelte';
-	import Work from '$components/work/Work.svelte';
 	import type { WorkType } from '$src/lib/type.js';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
+	import WorkCompact from '$components/work/WorkCompact.svelte';
 
 	let category = $state();
 
@@ -73,12 +73,12 @@
 		</ContainerRoot>
 		{#if works.length > 0}
 			<div
-				class="works-grid grid w-full grid-cols-1 justify-center gap-5 px-5 md:grid-cols-(--md-cols) lg:grid-cols-(--lg-cols)"
+				class="works-grid grid w-full grid-cols-1 justify-center gap-2 px-5 md:grid-cols-(--md-cols) lg:grid-cols-(--lg-cols)"
 				style="--md-cols: repeat({mdCols}, minmax(0, 1fr)); --lg-cols: repeat({lgCols}, minmax(0, 1fr))"
 			>
 				{#each works as work}
 					<div class="mx-auto">
-						<Work {work} />
+						<WorkCompact {work} />
 					</div>
 				{/each}
 			</div>
