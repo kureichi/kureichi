@@ -19,7 +19,9 @@
 	>
 {/snippet}
 
-<div class="fixed top-0 z-10 flex h-15 max-h-15 w-full items-center border border-white/10">
+<div
+	class="fixed top-0 z-10 flex h-15 max-h-15 w-full items-center border border-white/10 backdrop-blur-sm"
+>
 	<ContainerRoot>
 		<ContainerBody>
 			<div class="flex h-full items-center justify-between">
