@@ -5,8 +5,20 @@
 	import ContainerBody from '$components/container/ContainerBody.svelte';
 	import ContainerRoot from '$components/container/ContainerRoot.svelte';
 	import Work from '$components/work/Work.svelte';
+	import { onMount } from 'svelte';
 
-	let scrollY = $state(0);
+	let heroVideoDiv: HTMLDivElement | null = $state(null);
+
+	onMount(() => {
+		let scrollY = 0;
+
+		window.addEventListener('scroll', () => {
+			scrollY = window.scrollY;
+
+			if (!heroVideoDiv) return;
+			heroVideoDiv.style.transform = `translate3d(0, -${scrollY * 0.3}px, 0)`;
+		});
+	});
 
 	let works3 = $derived.by(() => {
 		if (!data.data) {
@@ -30,23 +42,18 @@
 	let { data }: { data: PageData } = $props();
 </script>
 
-<svelte:window bind:scrollY />
-
-<div class="relative">
+<div class="relative h-screen">
 	<div
-		class="absolute bottom-0 left-0 -z-1 h-[30dvh] w-full bg-linear-to-b from-black/0 to-black"
+		class="absolute bottom-0 left-0 -z-1 h-[30vh] w-full bg-linear-to-b from-black/0 to-black"
 	></div>
-	<div
-		class="absolute top-0 left-0 -z-2 h-full w-full opacity-50"
-		style="transform: translate3d(0, {scrollY * 0.6}px,0)"
-	>
+	<div bind:this={heroVideoDiv} class="fixed top-0 left-0 -z-2 h-full w-full opacity-50">
 		<video autoplay muted loop playsinline class="h-full w-full object-cover">
 			<source src="video/miyamori_2.mp4" type="video/mp4" />
 		</video>
 	</div>
 	<ContainerRoot>
 		<ContainerBody>
-			<div class="flex h-dvh flex-col justify-center gap-5">
+			<div class="flex h-full flex-col justify-center gap-5">
 				<div data-aos="fade-up">
 					<h1 class="text-5xl font-light">Where rhythm</h1>
 					<h1 class="text-5xl font-bold">meets movement.</h1>
