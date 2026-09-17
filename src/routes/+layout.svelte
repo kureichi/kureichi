@@ -6,7 +6,6 @@
 
 	import NavigationBar from '$components/navbar/NavigationBar.svelte';
 
-	import { onNavigate } from '$app/navigation';
 	import Footer from '$components/footer/Footer.svelte';
 	import NProgress from 'nprogress';
 	import 'nprogress/nprogress.css';
@@ -20,17 +19,6 @@
 	});
 	afterNavigate(() => {
 		nProgress.done();
-	});
-
-	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
-
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
-			});
-		});
 	});
 
 	let { children } = $props();
