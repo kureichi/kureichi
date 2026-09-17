@@ -54,9 +54,7 @@
 					{#if category == 'All'}
 						<ButtonPrimary>All</ButtonPrimary>
 					{:else}
-						<ButtonSecondary onclick={() => goto(resolve('/works?category=All'))}
-							>All</ButtonSecondary
-						>
+						<ButtonSecondary onclick={() => goto(resolve('/works'))}>All</ButtonSecondary>
 					{/if}
 
 					{#each data.data.categoryList as ownCategory}
