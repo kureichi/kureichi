@@ -3,11 +3,16 @@
 	import ContainerRoot from '$components/container/ContainerRoot.svelte';
 	import NavigationBarSpace from '$components/navbar/NavigationBarSpace.svelte';
 	import PageHeader from '$components/page/PageHeader.svelte';
+	import { getTitle } from '$src/lib/util.js';
 
 	let { data } = $props();
 </script>
 
 <NavigationBarSpace />
+
+<svelte:head>
+	<title>{getTitle('Preview')}</title>
+</svelte:head>
 
 <ContainerRoot>
 	<ContainerBody>

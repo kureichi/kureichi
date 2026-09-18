@@ -10,6 +10,7 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import WorkCompact from '$components/work/WorkCompact.svelte';
+	import { getTitle } from '$src/lib/util.js';
 
 	let category = $state();
 
@@ -39,6 +40,10 @@
 
 	let { data } = $props();
 </script>
+
+<svelte:head>
+	<title>{getTitle('Works')}</title>
+</svelte:head>
 
 <NavigationBarSpace />
 
