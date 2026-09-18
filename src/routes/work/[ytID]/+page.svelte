@@ -16,7 +16,7 @@
 			{#if data.workData}
 				<iframe
 					class="aspect-video h-auto w-full"
-					src="https://www.youtube.com/embed/{data.workData.ytId}"
+					src="https://www.youtube.com/embed/{data.workData.youtubeVideoID}"
 					title="YouTube video player"
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
