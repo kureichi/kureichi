@@ -2,7 +2,7 @@ export interface WorkType {
 	name: string;
 	description: string;
 	category: string;
-	ytId: string;
+	youtubeVideoID: string;
 }
 
 export interface Data {
