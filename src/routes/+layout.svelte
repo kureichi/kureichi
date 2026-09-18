@@ -2,8 +2,6 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import '@fontsource-variable/manrope';
 
-	import '$src/app.css';
-
 	import NavigationBar from '$components/navbar/NavigationBar.svelte';
 
 	import Footer from '$components/footer/Footer.svelte';
@@ -11,6 +9,7 @@
 	import 'nprogress/nprogress.css';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import nProgress from 'nprogress';
+
 
 	NProgress.configure({ showSpinner: false });
 
@@ -21,6 +20,8 @@
 		nProgress.done();
 	});
 
+
+	import '$src/app.css';
 	let { children } = $props();
 </script>
 
