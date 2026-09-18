@@ -1,0 +1,8 @@
+import { getData } from '$src/lib/api/getData';
+import type { PageServerLoad } from './$types';
+
+export const load: PageServerLoad = async () => {
+	return {
+		data: await getData()
+	};
+};
