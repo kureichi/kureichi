@@ -6,6 +6,7 @@
 	import ContainerRoot from '$components/container/ContainerRoot.svelte';
 	import Work from '$components/work/Work.svelte';
 	import { onMount } from 'svelte';
+	import { getTitle } from '$src/lib/util';
 
 	let heroVideoDiv: HTMLDivElement | null = $state(null);
 
@@ -41,6 +42,10 @@
 
 	let { data }: { data: PageData } = $props();
 </script>
+
+<svelte:head>
+	<title>{getTitle()}</title>
+</svelte:head>
 
 <div class="relative h-screen">
 	<div
