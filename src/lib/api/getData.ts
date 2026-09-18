@@ -22,7 +22,7 @@ export const getData = async (): Promise<Data> => {
 					name: m['Title'] as string,
 					description: m['Description'] as string,
 					category: m['Category'] as string,
-					ytId: m['Youtube Video ID'] as string
+					youtubeVideoID: m['Youtube Video ID'] as string
 				};
 			})
 			.filter((m) => m !== null);

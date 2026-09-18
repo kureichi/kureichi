@@ -5,12 +5,12 @@
 	let { work }: { work: WorkType } = $props();
 </script>
 
-<a href={resolve(`/work/${work.ytId}`)}>
+<a href={resolve(`/work/${work.youtubeVideoID}`)}>
 	<div class="relative flex w-fit flex-col gap-4 transition-all hover:scale-102">
 		<div>
 			<img
 				class="w-full max-w-200"
-				src="https://img.youtube.com/vi/{work.ytId}/maxresdefault.jpg"
+				src="https://img.youtube.com/vi/{work.youtubeVideoID}/maxresdefault.jpg"
 				alt=""
 			/>
 		</div>
