@@ -1,1 +1,1 @@
-<div class="text-xl font-bold">Kureichii</div>
+<div class="text-xl font-bold">Kureichi</div>

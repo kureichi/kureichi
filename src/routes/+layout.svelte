@@ -1,6 +1,5 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.ico';
-	import '@fontsource-variable/manrope';
 
 	import NavigationBar from '$components/navbar/NavigationBar.svelte';
 
@@ -92,7 +91,6 @@
 		color: #faf9f6;
 		background-color: #1a1a1a;
 		margin: 0;
-		font-family: 'Satoshi-Variable';
 	}
 
 	:global(#nprogress .bar) {

@@ -1,5 +1,18 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import '@fontsource-variable/stack-sans-headline';
+@import '@fontsource-variable/stack-sans-text';
+@import '@fontsource/open-sauce-sans';
+@import '@fontsource/open-sauce-sans/300.css';
+@import '@fontsource/open-sauce-sans/400.css';
+@import '@fontsource/open-sauce-sans/500.css';
+@import '@fontsource/open-sauce-sans/700.css';
+@import '@fontsource/open-sauce-sans/900.css';
 @theme {
-    --color-white: #faf9f6;
-    --color-black: #1a1a1a;
+	--font-headline: 'Stack Sans Headline Variable';
+	--color-white: #faf9f6;
+	--color-black: #1a1a1a;
+}
+
+body {
+	font-family: 'Open Sauce Sans';
 }

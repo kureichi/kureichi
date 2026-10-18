@@ -6,7 +6,7 @@
 </script>
 
 <ButtonBase
-	class="border border-white/20 bg-transparent px-4 py-2 text-sm text-white transition-all hover:scale-102"
+	class="border border-white/20 bg-transparent text-sm text-white transition-all hover:bg-neutral-800"
 	{...restProps}
 >
 	{#if children}

@@ -8,7 +8,7 @@
 </script>
 
 {#snippet link(name: string, path: string)}
-	<div class="transition-all hover:scale-102">
+	<div class="transition-all">
 		<a href={path}>{name}</a>
 	</div>
 {/snippet}

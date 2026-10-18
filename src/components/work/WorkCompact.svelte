@@ -6,16 +6,18 @@
 </script>
 
 <a href={resolve(`/work/${work.youtubeVideoID}`)}>
-	<div class="relative flex w-fit flex-col gap-4 transition-all hover:scale-102">
+	<div
+		class="relative flex aspect-video max-w-200 flex-col gap-4 overflow-hidden bg-white transition-all"
+	>
 		<div>
 			<img
-				class="w-full max-w-200"
+				class="w-full object-cover"
 				src="https://img.youtube.com/vi/{work.youtubeVideoID}/maxresdefault.jpg"
 				alt=""
 			/>
 		</div>
-		<div class="absolute bottom-0 w-full bg-linear-to-t from-black to-black/0 px-6 py-4">
-			<div class="font-bold">{work.name}</div>
+		<div class="absolute bottom-0 w-full bg-linear-to-t from-black/50 to-black/0 px-4 py-4">
+			<div class="font-medium text-pretty">{work.name}</div>
 		</div>
 	</div>
 </a>

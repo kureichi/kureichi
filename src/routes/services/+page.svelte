@@ -10,7 +10,4 @@
 
 <NavigationBarSpace />
 
-<PageHeader
-	title="SERVICES"
-	description="Here are the services I offer below that might suit your needs"
-/>
+<PageHeader title="SERVICES" description="Here are the services that might suit your needs" />

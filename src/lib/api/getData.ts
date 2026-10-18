@@ -1,6 +1,6 @@
 import { CSV_VIDEO_URL } from '$env/static/private';
 import type { Data, WorkType } from '../type';
-import { isObject, parseJSON } from '../util';
+import { isObject } from '../util';
 import Papa from 'papaparse';
 
 export const getData = async (): Promise<Data> => {
@@ -29,18 +29,16 @@ export const getData = async (): Promise<Data> => {
 
 		const categoryList = [...new Set(workList.map((m) => m.category))].filter(Boolean);
 
-		console.log('[api/getData] success fetching data');
-
 		return {
-            workList,
-            categoryList
-        };
+			workList,
+			categoryList
+		};
 	} catch (e) {
 		console.error(`[api/getData] ${String(e)}`);
 
-        return {
-            workList: [],
-            categoryList: []
-        }
+		return {
+			workList: [],
+			categoryList: []
+		};
 	}
 };

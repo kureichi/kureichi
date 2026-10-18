@@ -11,6 +11,7 @@
 	import { page } from '$app/state';
 	import WorkCompact from '$components/work/WorkCompact.svelte';
 	import { getTitle } from '$src/lib/util.js';
+	import Work from '$components/work/Work.svelte';
 
 	let category = $state();
 
@@ -52,9 +53,9 @@
 {:else}
 	<PageHeader title="WORKS" description="I'm ready to bring your stories and ideas to life." />
 
-	<div class="flex w-full flex-col gap-8">
-		<ContainerRoot>
-			<ContainerBody>
+	<ContainerRoot>
+		<ContainerBody>
+			<div class="mt-12 flex flex-col gap-8">
 				<div class="flex w-full flex-wrap justify-center gap-2">
 					{#if category == 'All'}
 						<ButtonPrimary>All</ButtonPrimary>
@@ -72,30 +73,25 @@
 						{/if}
 					{/each}
 				</div>
-			</ContainerBody>
-		</ContainerRoot>
-		{#if works.length > 0}
-			<div
-				class="works-grid grid w-full grid-cols-1 justify-center gap-2 px-5 md:grid-cols-(--md-cols) lg:grid-cols-(--lg-cols)"
-				style="--md-cols: repeat({mdCols}, minmax(0, 1fr)); --lg-cols: repeat({lgCols}, minmax(0, 1fr))"
-			>
-				{#each works as work}
-					<div class="mx-auto">
-						<WorkCompact {work} />
+
+				{#if works.length > 0}
+					<div
+						class="works-grid grid w-full grid-cols-1 justify-center gap-4 px-5 md:grid-cols-(--md-cols) lg:grid-cols-(--lg-cols)"
+						style="--md-cols: repeat({mdCols}, minmax(0, 1fr)); --lg-cols: repeat({lgCols}, minmax(0, 1fr))"
+					>
+						{#each works as work}
+							<Work {work} />
+						{/each}
 					</div>
-				{/each}
-			</div>
-		{:else}
-			<ContainerRoot>
-				<ContainerBody>
+				{:else}
 					<div class="flex w-full justify-center">
 						<p class="w-fit opacity-80">
 							There are a lot of things that haven't been included here yet, so please stay tuned!<br
 							/>- Kureichi
 						</p>
 					</div>
-				</ContainerBody>
-			</ContainerRoot>
-		{/if}
-	</div>
+				{/if}
+			</div>
+		</ContainerBody>
+	</ContainerRoot>
 {/if}

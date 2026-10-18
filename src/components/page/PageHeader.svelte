@@ -8,13 +8,14 @@
 
 <ContainerRoot>
 	<ContainerBody>
-		<div class="flex h-40 w-full flex-col items-center justify-center">
-			<h1 class="text-5xl font-bold">
-				{title}
-			</h1>
-			<p class="opacity-80">
+		<div class="mt-20 flex w-full flex-col items-center justify-center">
+			<p class="text-neutral-400">{title}</p>
+			<h1 class="max-w-5xl text-center text-5xl font-medium tracking-tight text-balance">
 				{description}
-			</p>
+			</h1>
+			<!-- <p class="opacity-80">
+				{description}
+			</p> -->
 		</div>
 	</ContainerBody>
 </ContainerRoot>

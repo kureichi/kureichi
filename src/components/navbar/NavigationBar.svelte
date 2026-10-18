@@ -12,7 +12,7 @@
 		><ButtonBase
 			class="text-sm {page.url.pathname.includes(path)
 				? 'font-bold text-white'
-				: 'text-white/80'} transition-all hover:scale-102 hover:text-white"
+				: 'text-white/80'} transition-all hover:text-white"
 		>
 			{name}
 		</ButtonBase></a
