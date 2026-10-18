@@ -1,5 +1,5 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.ico';
+	import favicon from '#lib/assets/favicon.ico';
 
 	import NavigationBar from '$components/navbar/NavigationBar.svelte';
 
@@ -11,10 +11,15 @@
 
 	NProgress.configure({ showSpinner: false });
 
-	beforeNavigate(() => {
+	beforeNavigate(({ shallow, type }) => {
+		if (shallow && type === 'goto') return;
+
 		NProgress.start();
 	});
-	afterNavigate(() => {
+
+	afterNavigate(({ shallow, type }) => {
+		if (shallow && type === 'goto') return;
+
 		nProgress.done();
 	});
 
@@ -31,7 +36,7 @@
 		'@context': 'https://schema.org',
 		'@type': 'WebPage',
 		name: title,
-		description: description,
+		description,
 		url: '${url}'
 	};
 
@@ -79,7 +84,7 @@
 	<div
 		class="fixed bottom-0 left-0 flex h-20 w-full items-center justify-center text-xs font-bold opacity-30"
 	>
-		&copy; 2026 Kureichi
+		© 2026 Kureichi
 	</div>
 </div>
 

@@ -55,14 +55,14 @@
 					{#if category == 'All'}
 						<ButtonPrimary>All</ButtonPrimary>
 					{:else}
-						<ButtonSecondary onclick={() => goto(resolve('/works'))}>All</ButtonSecondary>
+						<ButtonSecondary onclick={() => goto(resolve('works'))}>All</ButtonSecondary>
 					{/if}
 
 					{#each data.data.categoryList as ownCategory (ownCategory)}
 						{#if category == ownCategory}
 							<ButtonPrimary>{ownCategory}</ButtonPrimary>
 						{:else}
-							<ButtonSecondary onclick={() => goto(resolve(`/works?category=${ownCategory}`))}
+							<ButtonSecondary onclick={() => goto(resolve(`works?category=${ownCategory}`))}
 								>{ownCategory}</ButtonSecondary
 							>
 						{/if}

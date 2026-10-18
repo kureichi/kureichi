@@ -76,16 +76,14 @@
 	<ContainerRoot>
 		<ContainerBody>
 			<div class="flex flex-col items-center justify-center gap-4">
-				<div class="text-xl font-light">
-					LATEST<span class="font-bold">&nbsp;WORKS</span>
-				</div>
+				<div class="text-xl font-light">LATEST<span class="font-bold">WORKS</span></div>
 				<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 					{#each works3 as work (work.youtubeVideoID)}
 						<Work {work} />
 					{/each}
 				</div>
 
-				<a href={resolve('/works')}><ButtonPrimary>See Others</ButtonPrimary></a>
+				<a href={resolve('works')}><ButtonPrimary>See Others</ButtonPrimary></a>
 			</div>
 		</ContainerBody>
 	</ContainerRoot>

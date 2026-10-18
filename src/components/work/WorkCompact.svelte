@@ -5,7 +5,7 @@
 	let { work }: { work: WorkType } = $props();
 </script>
 
-<a href={resolve(`/work/${work.youtubeVideoID}`)}>
+<a href={resolve(`work/${work.youtubeVideoID}`)}>
 	<div
 		class="relative flex aspect-video max-w-200 flex-col gap-4 overflow-hidden bg-white transition-all"
 	>

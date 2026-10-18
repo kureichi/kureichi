@@ -34,8 +34,8 @@
 					</a>
 				</div>
 				<div class="flex justify-center gap-4 lg:gap-10">
-					{@render NavbarButton('WORKS', resolve('/works'))}
-					{@render NavbarButton('SERVICES', resolve('/services'))}
+					{@render NavbarButton('WORKS', resolve('works'))}
+					{@render NavbarButton('SERVICES', resolve('services'))}
 				</div>
 			</div>
 		</ContainerBody>

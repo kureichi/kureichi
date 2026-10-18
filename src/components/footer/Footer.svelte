@@ -45,8 +45,8 @@
 						<FooterLinkHeader>PAGES</FooterLinkHeader>
 						<FooterLinkContent>
 							{@render link('Home', resolve('/'))}
-							{@render link('Works', resolve('/works'))}
-							{@render link('Services', resolve('/services'))}
+							{@render link('Works', resolve('works'))}
+							{@render link('Services', resolve('services'))}
 						</FooterLinkContent>
 					</FooterLinkWrapper>
 

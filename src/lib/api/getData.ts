@@ -1,4 +1,4 @@
-import { CSV_VIDEO_URL } from '$env/static/private';
+import { CSV_VIDEO_URL } from '$app/env/private';
 import type { Data, WorkType } from '../type';
 import { isObject } from '../util';
 import Papa from 'papaparse';
