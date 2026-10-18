@@ -17,7 +17,7 @@
 <ContainerRoot>
 	<ContainerBody>
 		<PageHeader title="PREVIEW" description="This is a preview of a video project I’ve created" />
-		<div class="flex flex-col gap-8 pt-5">
+		<div class="mt-12 flex flex-col gap-8 pt-5">
 			{#if data.workData}
 				<iframe
 					class="aspect-video h-auto w-full"
