@@ -9,6 +9,7 @@
 
 {#snippet link(name: string, path: string)}
 	<div class="transition-all">
+		<!-- eslint-disable-next-line -->
 		<a href={path}>{name}</a>
 	</div>
 {/snippet}

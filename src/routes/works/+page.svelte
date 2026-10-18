@@ -9,15 +9,10 @@
 	import type { WorkType } from '$src/lib/type.js';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import WorkCompact from '$components/work/WorkCompact.svelte';
 	import { getTitle } from '$src/lib/util.js';
 	import Work from '$components/work/Work.svelte';
 
-	let category = $state();
-
-	$effect(() => {
-		category = page.url.searchParams.get('category') ?? 'All';
-	});
+	let category = $derived(page.url.searchParams.get('category') ?? 'All');
 
 	let works: WorkType[] = $derived.by(() => {
 		if (!data.data) {
@@ -25,7 +20,7 @@
 		}
 
 		let workList = [];
-		for (let work of data.data?.workList) {
+		for (let work of data.data.workList) {
 			if (work.category != category && category != 'All') {
 				continue;
 			}
@@ -63,7 +58,7 @@
 						<ButtonSecondary onclick={() => goto(resolve('/works'))}>All</ButtonSecondary>
 					{/if}
 
-					{#each data.data.categoryList as ownCategory}
+					{#each data.data.categoryList as ownCategory (ownCategory)}
 						{#if category == ownCategory}
 							<ButtonPrimary>{ownCategory}</ButtonPrimary>
 						{:else}
@@ -79,7 +74,7 @@
 						class="works-grid grid w-full grid-cols-1 justify-center gap-4 px-5 md:grid-cols-(--md-cols) lg:grid-cols-(--lg-cols)"
 						style="--md-cols: repeat({mdCols}, minmax(0, 1fr)); --lg-cols: repeat({lgCols}, minmax(0, 1fr))"
 					>
-						{#each works as work}
+						{#each works as work (work.youtubeVideoID)}
 							<Work {work} />
 						{/each}
 					</div>

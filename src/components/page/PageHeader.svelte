@@ -13,9 +13,6 @@
 			<h1 class="max-w-5xl text-center text-5xl font-medium tracking-tight text-balance">
 				{description}
 			</h1>
-			<!-- <p class="opacity-80">
-				{description}
-			</p> -->
 		</div>
 	</ContainerBody>
 </ContainerRoot>

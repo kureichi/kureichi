@@ -26,6 +26,17 @@
 		'High energy motion graphics and music videos for VTubers and music creators. Turn your audio into striking visual experiences. Open for commissions!';
 	let url = 'https://kureichi.pages.dev';
 	let image = 'https://kureichi.pages.dev';
+
+	let jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'WebPage',
+		name: title,
+		description: description,
+		url: '${url}'
+	};
+
+	// eslint-disable-next-line
+	let jsonLdTag = `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}<\/script>`;
 </script>
 
 <svelte:head>
@@ -50,24 +61,13 @@
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={image} />
 
-	{@html `
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebPage",
-				"name": "${title.replace(/"/g, '\\"')}",
-				"description": "${description.replace(/"/g, '\\"')}",
-				"url": "${url}"
-			}
-		</script>
-	`}
+	<!-- eslint-disable-next-line -->
+	{@html jsonLdTag}
 	<link rel="stylesheet" href="/fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css" />
 </svelte:head>
 
-<!-- ini navbarnya -->
 <NavigationBar />
 
-<!-- ini contentnya -->
 {@render children()}
 
 <div class="w-full bg-black">

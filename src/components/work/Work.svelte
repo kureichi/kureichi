@@ -23,8 +23,5 @@
 	<div class="flex flex-col gap-1">
 		<div class="font-bold">{work.name}</div>
 		<div class="text-sm opacity-80">{work.description}</div>
-		<!-- <a href="https://www.youtube.com/watch?v={work.youtubeVideoID}" class="w-fit text-sm"
-			>Youtube →</a
-		> -->
 	</div>
 </a>

@@ -8,6 +8,7 @@
 </script>
 
 {#snippet NavbarButton(name: string, path: string)}
+	<!-- eslint-disable-next-line -->
 	<a href={path}
 		><ButtonBase
 			class="text-sm {page.url.pathname.includes(path)

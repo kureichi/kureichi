@@ -80,7 +80,7 @@
 					LATEST<span class="font-bold">&nbsp;WORKS</span>
 				</div>
 				<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-					{#each works3 as work}
+					{#each works3 as work (work.youtubeVideoID)}
 						<Work {work} />
 					{/each}
 				</div>

@@ -7,6 +7,7 @@
 @import '@fontsource/open-sauce-sans/500.css';
 @import '@fontsource/open-sauce-sans/700.css';
 @import '@fontsource/open-sauce-sans/900.css';
+
 @theme {
 	--font-headline: 'Stack Sans Headline Variable';
 	--color-white: #faf9f6;
