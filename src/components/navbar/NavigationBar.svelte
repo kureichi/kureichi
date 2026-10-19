@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import ButtonBase from '../button/ButtonBase.svelte';
+	import ButtonLink from '$components/button/ButtonLink.svelte';
 	import ContainerBody from '../container/ContainerBody.svelte';
 	import ContainerRoot from '../container/ContainerRoot.svelte';
 	import Logo from '../logo/Logo.svelte';
@@ -9,15 +9,11 @@
 
 {#snippet NavbarButton(name: string, path: string)}
 	<!-- eslint-disable-next-line -->
-	<a href={path}
-		><ButtonBase
-			class="text-sm {page.url.pathname.includes(path)
-				? 'font-bold text-white'
-				: 'text-white/80'} transition-all hover:text-white"
-		>
+	<a href={path}>
+		<ButtonLink active={page.url.pathname.includes(path) || page.url.pathname == '/'}>
 			{name}
-		</ButtonBase></a
-	>
+		</ButtonLink>
+	</a>
 {/snippet}
 
 <div
@@ -28,9 +24,9 @@
 			<div class="flex h-full items-center justify-between">
 				<div class="flex">
 					<a href={resolve('/')}>
-						<ButtonBase>
+						<ButtonLink>
 							<Logo />
-						</ButtonBase>
+						</ButtonLink>
 					</a>
 				</div>
 				<div class="flex justify-center gap-4 lg:gap-10">
