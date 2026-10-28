@@ -4,24 +4,6 @@
 	import NavigationBar from '$components/navbar/NavigationBar.svelte';
 
 	import Footer from '$components/footer/Footer.svelte';
-	import NProgress from 'nprogress';
-	import 'nprogress/nprogress.css';
-	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import nProgress from 'nprogress';
-
-	NProgress.configure({ showSpinner: false });
-
-	beforeNavigate(({ shallow, type }) => {
-		if (shallow && type === 'goto') return;
-
-		NProgress.start();
-	});
-
-	afterNavigate(({ shallow, type }) => {
-		if (shallow && type === 'goto') return;
-
-		nProgress.done();
-	});
 
 	import '$src/app.css';
 	let { children } = $props();
