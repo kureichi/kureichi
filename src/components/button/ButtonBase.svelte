@@ -5,7 +5,7 @@
 </script>
 
 <button
-	class="w-fit cursor-pointer rounded-lg px-5 py-3 text-sm font-medium transition-all active:scale-95 {klass}"
+	class="w-fit cursor-pointer rounded-lg px-5 py-3 text-sm font-medium transition-all {klass}"
 	{...restProps}
 >
 	{#if children}
