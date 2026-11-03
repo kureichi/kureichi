@@ -2,18 +2,19 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import ButtonLink from '$components/button/ButtonLink.svelte';
-	import { onMount } from 'svelte';
 	import ContainerBody from '../container/ContainerBody.svelte';
 	import ContainerRoot from '../container/ContainerRoot.svelte';
 	import Logo from '../logo/Logo.svelte';
 	import { fade } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
+	import { browser } from '$app/env';
 
 	let showBackground = $state(false);
 	let anchorEl: HTMLDivElement | null = $state(null);
+	let targetEl: HTMLElement | null = $state(null);
 
-	onMount(() => {
-		if (!anchorEl) return;
+	$effect(() => {
+		if (!browser || !anchorEl || !page.url.pathname) return;
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
@@ -29,10 +30,10 @@
 			}
 		);
 
-		const targetElement = document.getElementById('navbar-anchor');
+		targetEl = document.getElementById('navbar-anchor');
 
-		if (targetElement) {
-			observer.observe(targetElement);
+		if (targetEl) {
+			observer.observe(targetEl);
 		} else {
 			showBackground = true;
 		}
