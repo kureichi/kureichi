@@ -7,7 +7,7 @@
 </script>
 
 <a
-	href={resolve('/work/[ytID]', { ytID: work.youtubeVideoID })}
+	href={resolve('/works/preview/[ytID]', { ytID: work.youtubeVideoID })}
 	class="flex cursor-pointer flex-col gap-2 text-left transition-all"
 	onmouseenter={() => (isHover = true)}
 	onmouseleave={() => (isHover = false)}
