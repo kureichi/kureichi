@@ -9,6 +9,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	const workData = workFilter.pop();
 
 	return {
+		data,
 		workData
 	};
 };

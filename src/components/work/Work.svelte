@@ -11,6 +11,8 @@
 	class="flex cursor-pointer flex-col gap-2 text-left transition-all"
 	onmouseenter={() => (isHover = true)}
 	onmouseleave={() => (isHover = false)}
+	data-modal
+	data-modal-type="PREVIEW"
 >
 	<div class="aspect-video w-full max-w-200 overflow-hidden">
 		<img
