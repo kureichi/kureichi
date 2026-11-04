@@ -71,7 +71,7 @@
 
 				{#if works.length > 0}
 					<div
-						class="works-grid grid w-full grid-cols-1 justify-center gap-4 px-5 md:grid-cols-(--md-cols) lg:grid-cols-(--lg-cols)"
+						class="works-grid grid w-full grid-cols-1 justify-center gap-4 md:grid-cols-(--md-cols) lg:grid-cols-(--lg-cols)"
 						style="--md-cols: repeat({mdCols}, minmax(0, 1fr)); --lg-cols: repeat({lgCols}, minmax(0, 1fr))"
 					>
 						{#each works as work (work.youtubeVideoID)}
