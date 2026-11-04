@@ -6,6 +6,7 @@
 	import Footer from '$components/footer/Footer.svelte';
 
 	import '$src/app.css';
+	import HashListener from '$components/hash/HashListener.svelte';
 	let { children } = $props();
 
 	let title = 'Kureichii Works';
@@ -52,6 +53,8 @@
 	{@html jsonLdTag}
 	<link rel="stylesheet" href="/fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css" />
 </svelte:head>
+
+<HashListener />
 
 <NavigationBar />
 
