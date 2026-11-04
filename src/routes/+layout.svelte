@@ -6,6 +6,11 @@
 	import Footer from '$components/footer/Footer.svelte';
 
 	import '$src/app.css';
+	import HashListener from '$components/hash/HashListener.svelte';
+	import { goto, preloadData } from '$app/navigation';
+	import { page } from '$app/state';
+	import VideoModal from '$components/modal/VideoModal.svelte';
+	import { type WorkType } from '$src/lib/type';
 	let { children } = $props();
 
 	let title = 'Kureichii Works';
@@ -24,9 +29,48 @@
 
 	// eslint-disable-next-line
 	let jsonLdTag = `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}<\/script>`;
+
+	async function intercept(e: MouseEvent) {
+		if (e.defaultPrevented || e.button !== 0) return;
+		if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+		const target = e.target as Element | null;
+		const a = target?.closest<HTMLAnchorElement>('a[data-modal]');
+		if (!a) return;
+
+		e.preventDefault();
+		const href = a.href;
+		const modalType = a.dataset.modalType;
+
+		const result = await preloadData(href);
+		if (modalType && result.type === 'loaded' && result.status === 200) {
+			goto(href, {
+				state: {
+					modal: { type: modalType, href, data: result.data }
+				},
+				shallow: true
+			});
+		} else {
+			goto(href);
+		}
+	}
+
+	function close() {
+		history.back();
+	}
 </script>
 
 <svelte:head>
+	<script
+		src="
+https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/index.min.js
+"
+	></script>
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.min.css"
+	/>
+
 	<link rel="icon" type="image/x-icon" href={favicon} />
 
 	<title>{title}</title>
@@ -52,6 +96,16 @@
 	{@html jsonLdTag}
 	<link rel="stylesheet" href="/fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css" />
 </svelte:head>
+
+<svelte:window onclickcapture={intercept} />
+
+{#if page.state.modal}
+	{#if page.state.modal.type == 'PREVIEW'}
+		<VideoModal onClose={close} workData={page.state.modal.data.workData as WorkType} />
+	{/if}
+{/if}
+
+<HashListener />
 
 <NavigationBar />
 

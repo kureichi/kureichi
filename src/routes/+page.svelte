@@ -60,7 +60,7 @@
 		<ContainerBody>
 			<div class="flex h-full flex-col justify-center gap-5">
 				<div data-aos="fade-up">
-					<h1 class="text-6xl tracking-tight">Where rhythm</h1>
+					<h1 id="navbar-anchor" class="text-6xl tracking-tight">Where rhythm</h1>
 					<h1 class="text-6xl font-medium tracking-tight">meets movement.</h1>
 				</div>
 				<div data-aos="fade-up">Music Video, 2D Compositing, and Motion Graphics!</div>
@@ -76,7 +76,7 @@
 	<ContainerRoot>
 		<ContainerBody>
 			<div class="flex flex-col items-center justify-center gap-4">
-				<div class="text-xl font-light">LATEST<span class="font-bold">WORKS</span></div>
+				<div class="text-xl font-light">SELECTED <span class="font-bold">WORKS</span></div>
 				<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 					{#each works3 as work (work.youtubeVideoID)}
 						<Work {work} />
