@@ -12,7 +12,12 @@
 </script>
 
 <ModalBase {onClose}>
-	<div class="flex w-full flex-col gap-4 rounded-2xl bg-neutral-800 p-4">
+	<div
+		class="relative flex w-full flex-col gap-4 rounded-2xl border-2 border-neutral-700 bg-neutral-800 p-4 md:p-8"
+	>
+		<button onclick={onClose} class="w-fit cursor-pointer">
+			<i class="ph ph-arrow-left ph-lg"></i>
+		</button>
 		<div class="flex flex-1 overflow-hidden rounded-xl">
 			<iframe
 				class="aspect-video h-auto w-full"
