@@ -3,13 +3,12 @@
 	import type { WorkType } from '$src/lib/type';
 
 	let isHover = $state(false);
-
 	let { work }: { work: WorkType } = $props();
 </script>
 
 <a
 	href={resolve('/work/[ytID]', { ytID: work.youtubeVideoID })}
-	class="flex flex-col gap-2 text-left transition-all"
+	class="flex cursor-pointer flex-col gap-2 text-left transition-all"
 	onmouseenter={() => (isHover = true)}
 	onmouseleave={() => (isHover = false)}
 >
